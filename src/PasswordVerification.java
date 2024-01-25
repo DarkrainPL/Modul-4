@@ -1,9 +1,7 @@
 public class PasswordVerification {
-    public String password = "AlaMaKota12!";
 
 
-    public boolean hasGoodLenght() {
-
+    public boolean hasGoodLenght(String password) {
         if (password.length() >= 12) {
             return true;
         } else {
@@ -11,7 +9,7 @@ public class PasswordVerification {
         }
     }
 
-    public boolean hasNoWhiteSpaces() {
+    public boolean hasNoWhiteSpaces(String password) {
         for (int i = 0; i <= password.length(); i++) {
             char c = password.charAt(i);
             if (Character.isWhitespace(c)) {
@@ -24,7 +22,7 @@ public class PasswordVerification {
         return false;
     }
 
-    public boolean hasNoRepetitions() {
+    public boolean hasNoRepetitions(String password) {
         for (int i = 0; i < (password.length() - 1); i++) {
             char c1 = password.charAt(i);
             char c2 = password.charAt(i + 1);
@@ -36,8 +34,8 @@ public class PasswordVerification {
         return false;
     }
 
-    public boolean hasNumbers() {
-        for (int i = 0; i <= password.length(); i++) {
+    public boolean hasNumbers(String password) {
+        for (int i = 0; i < password.length(); i++) {
             char c = password.charAt(i);
 
             if (Character.isDigit(c)) {
@@ -47,8 +45,8 @@ public class PasswordVerification {
         return false;
     }
 
-    public boolean hasSpecialCharacter() {
-        for (int i = 0; i <= password.length(); i++) {
+    public boolean hasSpecialCharacter(String password) {
+        for (int i = 0; i < password.length(); i++) {
             char c = password.charAt(i);
             if (!Character.isDigit(c) && !Character.isLetter(c) && !Character.isWhitespace(c)) {
                 return true;
